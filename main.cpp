@@ -80,7 +80,7 @@ node* forwardSearch(std::vector<std::vector<float>>& data, std::vector<int>& fea
     float accuracyfinal = std::numeric_limits<float>::lowest();
     float accuracychecker = 0;
     int index = -1;
-    std::cout << "On level " << currNode->features.size() << std::endl;
+    std::cout << "On level " << currNode->features.size() << " Level Accuracy " << currNode->accuracy << std::endl;
     if(features.size() == data.at(0).size() - 1){
         return nullptr;
     }
@@ -114,7 +114,7 @@ node* backwardSearch(std::vector<std::vector<float>>& data, std::vector<int>& fe
     float accuracyfinal = std::numeric_limits<float>::lowest();
     float accuracychecker = 0;
     int index = -1;
-    std::cout << "On level " << currNode->features.size() << std::endl;
+    std::cout << "On level " << currNode->features.size() << " Best Accuracy " << best << std::endl;
     if(features.size() <= 1){
         return nullptr;
     }
@@ -182,7 +182,7 @@ int main(int argc, char*  argv[]){
     std::vector<int> featuresordered;
     std::unordered_set<int> checker;
     if(type == 2){
-       for(int i = 0; i < data.at(0).size(); i++){
+       for(int i = 1; i < data.at(0).size(); i++){
             features.push_back(i);
             checker.insert(i);
        } 
